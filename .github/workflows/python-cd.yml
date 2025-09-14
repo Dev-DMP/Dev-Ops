@@ -2,15 +2,17 @@ name: Python CD
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
+      - dev
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Simulate deployment
-      run: echo "Deploying project..."
+      - name: Simulate deployment
+        run: echo "Deploying project..."
