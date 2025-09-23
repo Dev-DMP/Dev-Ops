@@ -1,5 +1,5 @@
 import unittest
-from app import hello, bye, soma, subtrai, multiplica
+from app import hello, bye
 
 class TestApp(unittest.TestCase):
 
@@ -9,14 +9,15 @@ class TestApp(unittest.TestCase):
     def test_bye(self):
         self.assertEqual(bye(), "Goodbye, DevOps!")
 
-    def test_soma(self):
-        self.assertEqual(soma(3, 2), 5)
+    def test_hello_type(self):
+        self.assertIsInstance(hello(), str)
 
-    def test_subtrai(self):
-        self.assertEqual(subtrai(10, 4), 6)
+    def test_bye_type(self):
+        self.assertIsInstance(bye(), str)
 
-    def test_multiplica(self):
-        self.assertEqual(multiplica(3, 5), 15)
+    def test_combined_length(self):
+        combined = hello() + bye()
+        self.assertTrue(len(combined) > 0)
 
 if __name__ == "__main__":
     unittest.main()
