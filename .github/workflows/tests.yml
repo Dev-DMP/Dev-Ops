@@ -26,3 +26,5 @@ jobs:
 
       - name: Run unit tests
         run: python test.py
+        env:
+          PYTHONPATH: ${{ github.workspace }}
