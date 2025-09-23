@@ -1,20 +1,19 @@
-# src/test.py
 import unittest
 from app import hello, bye
 
 class TestApp(unittest.TestCase):
 
-    def test_hello(self):
+    def test_hello_returns_hello(self):
         self.assertEqual(hello(), "Hello, DevOps!")
 
-    def test_bye(self):
+    def test_bye_returns_goodbye(self):
         self.assertEqual(bye(), "Goodbye, DevOps!")
 
     def test_hello_not_empty(self):
-        self.assertNotEqual(hello(), "")
+        self.assertTrue(len(hello()) > 0)
 
     def test_bye_not_empty(self):
-        self.assertNotEqual(bye(), "")
+        self.assertTrue(len(bye()) > 0)
 
     def test_hello_type(self):
         self.assertIsInstance(hello(), str)
